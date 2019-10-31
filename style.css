@@ -12,12 +12,12 @@ html {
 
 body {
   padding: 55px;
-  margin: 0px;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 100vw;
-  height: 130vh;
+  /* width: 100vw;
+  height: 130vh; */
   background-image: url("./assets/svenja'sMap.png");
   background-color: black;
   background-repeat: no-repeat;
