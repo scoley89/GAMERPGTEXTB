@@ -1,5 +1,118 @@
 let state = {};
-const gender = state.isM ? "Mr. " : "Ms. ";
+/* 
+  GENDER
+  isM, 
+  CLASS
+  isAF, isAr, isNa
+
+  IS JOB
+  if AF
+  isDg
+  isTG
+  if AR
+  isIf
+  isFm
+  IS NAVY
+  isNLE
+  isSC
+  
+THIS IS LIFE
+  Survived
+
+  THIS IS MOOD
+  isHappy
+  isShame
+
+  isF
+  isAF, isAr, isNa
+
+  if AF
+
+ isTF
+  isTG
+  
+
+  if AR
+  isWAC
+  isFm
+
+  if NAVY
+  isNLE
+  isSC
+
+  Survived
+
+  isHappy
+  isShame
+  */
+const df = state => {
+  let newObject = {};
+  newObject.name = state.name;
+  // MALE OPTIONS
+  if (state.isM) {
+    newObject.gender = "Mr. ";
+    if (state.isAf) {
+      newObject.class = "Air Force";
+      if (state.isDg) {
+        newObject.job = "Dog Figther";
+      } else if (state.isTg) {
+        newObject.job = "Tail Gunner";
+      }
+    } else if (state.isAr) {
+      newObject.class = "Army";
+      if (state.isIf) {
+        newObject.job = "Infantry";
+      } else if (state.isFm) {
+        newObject.job = "Field Medic";
+      }
+    } else if (state.isNa) {
+      newObject.class = "Navy";
+      if (state.isNLE) {
+        newObject.job = "Naval Law Enforcement";
+      } else if (state.isSC) {
+        newObject.job = "Submarine Commander";
+      }
+    }
+    if (state.isHappy) {
+      newObject.mood = "is happily married with two wonderful children";
+    } else if (state.isShame) {
+      newObject.mood = "came home defeated and a broken man";
+    }
+    // FEMALE OPTIONS
+  } else if (state.isF) {
+    newObject.gender = "Ms. ";
+    if (state.isAf) {
+      newObject.class = "Air Force";
+      if (state.isWAF) {
+        newObject.job = "Women's Auxiliary Force";
+      } else if (state.isTg) {
+        newObject.job = "Tail Gunner";
+      }
+    } else if (state.isAr) {
+      newObject.class = "Army";
+      if (state.isIf) {
+        newObject.job = "Women's Auxiliary Core";
+      } else if (isFm) {
+        newObject.job = "Field Medic";
+      }
+    } else if (state.isNa) {
+      newObject.class = "Navy";
+      if (state.isNLE) {
+        newObject.job = "Naval Law Enforcement";
+      } else if (state.isSC) {
+        newObject.job = "Submarine Commander";
+      }
+    }
+
+    if (state.isHappy) {
+      newObject.mood = "is currently pursuing as a detective in ...";
+    } else if (state.isShame) {
+      newObject.mood = "came home defeated and a broken woman";
+    }
+  }
+
+  return newObject;
+};
 
 const textNodes = function() {
   return [
@@ -98,7 +211,7 @@ const textNodes = function() {
           text:
             "ask the man his name and rank first, only to find that he was the General dressed in civies.",
           requiredState: currentState => currentState.isM && currentState.isAr,
-          setState: { isM: true, isAr: true, isFieldMed: true },
+          setState: { isM: true, isAr: true, isFm: true },
           nextText: 106
         }
       ]
@@ -477,9 +590,9 @@ const textNodes = function() {
     // ________________________VICTORY SLIDE GET HELP WITH AIRFORCE________________________________________
     {
       id: 111,
-      text: `Victory Slide Get Help Here. Look here, ${
-        state.isM ? "Mr. " : "Ms. "
-      }${state.name}`,
+      text: `Victory Slide Get Help Here. Look here, ${df(state).gender}${
+        df(state).name
+      } has a job doing ${df(state).job}`,
       options: [
         {
           text: "Army",
@@ -686,51 +799,57 @@ const textNodes = function() {
     },
     {
       id: 120,
-      text: `Dearest, I hope all is well at home. Things here a developing in a way I never could have foreseen. After meeting with my friends, I discovered quite by accident a bloody shirt within Janet's satchle bag. I was later informed by my superiors that a murder had occured of a man by what the police suspected to be his jilted lover. After my discovery I followed Janet and observed her disposing of rather large bags containing something into the ocean. I reported my suspesions to my superiors along with the location where she had disposed of the weighted bags. Because of my actions it was proven that she was in fact the killer and my superiors decided that a career in Naval Law Enforcment was best suited for me. Now that I have a clear path set before me, the question is whether I should _______________________. I hope the dangers of my new position will not worry you to much, my love. Now and forever yours, ${state.name}`,
+      text: `Dearest, I hope all is well at home. Things here a developing in a way I never could have foreseen. After meeting with my friends, I discovered quite by accident a bloody shirt within Janet's satchle bag. I was later informed by my superiors that a murder had occured of a man by what the police suspected to be his jilted lover. After my discovery I followed Janet and observed her disposing of rather large bags containing something into the ocean. I reported my suspesions to my superiors along with the location where she had disposed of the weighted bags. Because of my actions it was proven that she was in fact the killer and my superiors decided that a career in Naval Law Enforcment was best suited for me. Now that I have a new murder case this time officially given to me, the question is whether I should _______________________. I hope the dangers of my new position will not worry you to much, my love. Now and forever yours, ${state.name}`,
       options: [
         {
-          text: "...study the details of Naval law and hit the books?",
+          text:
+            "...presue the suspect myself and avoid the issue of a possible internal source?",
           requiredState: currentState => currentState.isF && currentState.isNa,
-          setState: { isF: true, isNa: true, isNLE: true },
-          nextText: 24982759298
+          setState: { isF: true, isNa: true, isNLE: true, survived: true },
+          nextText: 121
         },
         {
           text:
-            "...socialize a bit and make connections, while keeping in mind all of the cases we have on file?",
+            "...turn over all the intel I have gathered on the possible suspect to my supervisor?",
           requiredState: currentState => currentState.isF && currentState.isNa,
-          setState: { isM: true, isAf: true, isNLE: true },
-          nextText: 51093810985
+          setState: { isF: true, isNa: true, isNLE: true, survived: true },
+          nextText: 1101
         },
         {
           text:
-            "...presue a the path of a young man I suspect is about to abandon his post?",
+            "...wait before I make any decisions and hope that the suspect slips up and gives me something to work with?",
           requiredState: currentState => currentState.isF && currentState.isNa,
-          setState: { isM: true, isAf: true, isNLE: true },
-          nextText: 894723058927
+          setState: { isF: true, isNa: true, isNLE: true, isDead: true },
+          nextText: 11113
         }
       ]
     },
     {
       id: 121,
-      text: "Navy Fem Lose Arch",
+      text:
+        "My love, after a tailing my suspect in a daring chase, I managed to track him back as he returned to the scene of the crime in search of something. After we detained him some exciting news came to light. It appears he was a double agent and his victim was a spy for us! He had returned to the scene of the crime to retrieve a folder of documents that the intelligence agencies may be instrumental in brining this war to an END! Hopefully we will be reunited soon, my love! I have been given a promotion to Detective and will be granted leave as a bonus for my work. Before I return to your embrace though,I fear I must ___________. ",
       options: [
         {
-          text: "STUFF GOES HERE",
-          requiredState: currentState => currentState.isTg,
-          setState: { isM: true, isAf: true, isTg: true },
-          nextText: 24982759298
+          text:
+            "...inform you that I plan on prioritzing my career above the prospects of a family!",
+          requiredState: currentState =>
+            currentState.isNLE && currentState.survived,
+          setState: {
+            isF: true,
+            isNa: true,
+            isNLE: true,
+            survived: true,
+            isHappy: true
+          },
+          nextText: 325
         },
         {
-          text: "STUFF GOES HERE",
-          requiredState: currentState => currentState.isTg,
-          setState: { isM: true, isAf: true, isTg: true },
+          text:
+            "inform you that my father is old fashioned, if you had hopes of a family. You will need his permission, before you ask for my hand.",
+          requiredState: currentState =>
+            currentState.isNLE && currentState.survived,
+          setState: { isF: true, isAf: true, isNLE: true, isShame: true },
           nextText: 51093810985
-        },
-        {
-          text: "STUFF GOES HERE",
-          requiredState: currentState => currentState.isM,
-          setState: { isM: true, isAf: true, isTg: true },
-          nextText: 894723058927
         }
       ]
     },
@@ -754,6 +873,30 @@ const textNodes = function() {
         {
           text: "STUFF GOES HERE",
           requiredState: currentState => currentState.isM,
+          setState: { isM: true, isAf: true, isTg: true },
+          nextText: 894723058927
+        }
+      ]
+    },
+    {
+      id: 325,
+      text: "WINNING!!!",
+      options: [
+        {
+          text: "STUFF GOES HERE",
+          requiredState: currentState => currentState.isNLE && currentState.isF,
+          setState: { isM: true, isAf: true, isTg: true },
+          nextText: 24982759298
+        },
+        {
+          text: "STUFF GOES HERE",
+          requiredState: currentState => currentState.isNLE && currentState.isF,
+          setState: { isM: true, isAf: true, isTg: true },
+          nextText: 51093810985
+        },
+        {
+          text: "STUFF GOES HERE",
+          requiredState: currentState => currentState.isNLE,
           setState: { isM: true, isAf: true, isTg: true },
           nextText: 894723058927
         }
