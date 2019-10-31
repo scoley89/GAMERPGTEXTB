@@ -98,14 +98,15 @@ const df = state => {
     } else if (state.isNa) {
       newObject.class = "Navy";
       if (state.isNLE) {
-        newObject.job = "Naval Law Enforcement";
+        newObject.job = "Naval Law Enforcement Officer";
       } else if (state.isSC) {
         newObject.job = "Submarine Commander";
       }
     }
 
     if (state.isHappy) {
-      newObject.mood = "is currently pursuing as a detective in ...";
+      newObject.mood =
+        "is pursuing a career as a detective in the city of New Geaorgia";
     } else if (state.isShame) {
       newObject.mood = "came home defeated and a broken woman";
     }
@@ -138,8 +139,7 @@ const textNodes = function() {
     // ____________________________CLASS SELECT MALE__________________________________________________________
     {
       id: 2,
-      text:
-        "My sweetest Jacqueline. The timing of this horrid War could not have been set at a more remoursful time. While it is with excitment, honor, and pride that I have answered the call to arms like my brothers before me; there is no greater sorrow then being away from you at the very onset of the miracle that is our courtship. Like my eldest brother James I have choosen to serve in the best _________ this world has ever seen, so fear not my sweet those Ragnosian bastards won't know what hit them!",
+      text: `My sweetest Jacqueline. The timing of this horrid War could not have been set at a more remoursful time. While it is with excitment, honor, and pride that I have answered the call to arms like my brothers before me; there is no greater sorrow then being away from you at the very onset of the miracle that is our courtship. Like my eldest brother James I have choosen to serve in the best _________ this world has ever seen, so fear not my sweet those Ragnosian bastards won't know what hit them! Yours ${state.name}`,
       options: [
         {
           text: "Army",
@@ -164,8 +164,7 @@ const textNodes = function() {
     // __________________________________CLASS SELECT FEMALE_______________________________________
     {
       id: 3,
-      text:
-        "My dearest Anthony, I am sorry that you must hear of my current state this way but telling you in person would have left my heart in shables and I fear I would not have been ablt to bring myself to go to war. I know that you of all people will understand what happens to draft dodgers and that you especially would remind me of the strength of our bond. You wish to be with a strong and capable lady who, while she may carry her self with grace and class, has the strength of will and tenacity to put those treacherous Ragnosian fools in the grave were they belong. Not even the ancient Spartonian Women can hold a candle to our feminine prowess. I know that my joining the ______ will make you proud and our eventual reunion will be that much sweeter as a consquent of our distance and the constant worry that is bound to haunt us both while this war rages.",
+      text: `My dearest Anthony, I am sorry that you must hear of my current state this way but telling you in person would have left my heart in shables and I fear I would not have been ablt to bring myself to go to war. I know that you of all people will understand what happens to draft dodgers and that you especially would remind me of the strength of our bond. You wish to be with a strong and capable lady who, while she may carry her self with grace and class, has the strength of will and tenacity to put those treacherous Ragnosian fools in the grave were they belong. Not even the ancient Spartonian Women can hold a candle to our feminine prowess. I know that my joining the ______ will make you proud and our eventual reunion will be that much sweeter as a consquent of our distance and the constant worry that is bound to haunt us both while this war rages. Love, ${state.name}`,
       options: [
         {
           text: "Army",
@@ -190,8 +189,7 @@ const textNodes = function() {
     //__________________________MALE JOB SELECT ARMY____________________________
     {
       id: 4,
-      text:
-        "Hello my love. I hope that all is well. After reporting in, I have, by some strange miracle, found myself in the same theater of war as James! Who knows maybe we will fight side by side some day. I have asked to be placed in his unit but this is the Army and there are no promises. Today after reporting in I found out that after basic, I will be placed into my first position. I hope that the fit will be right. I am not sure how they assign these things. A strange man approached me today, he asked me for a cirgerette in a rather assuming way. My response was to ________________ . I will be sure to ask for leave as soon as possible so that we might one day be reunited but I fear that it is way to early in my war to dare to even have such thoughts.",
+      text: `Hello my love. I hope that all is well. After reporting in, I have, by some strange miracle, found myself in the same theater of war as James! Who knows maybe we will fight side by side some day. I have asked to be placed in his unit but this is the Army and there are no promises. Today after reporting in I found out that after basic, I will be placed into my first position. I hope that the fit will be right. I am not sure how they assign these things. A strange man approached me today, he asked me for a cirgerette in a rather assuming way. My response was to ________________ . I will be sure to ask for leave as soon as possible so that we might one day be reunited but I fear that it is way to early in my war to dare to even have such thoughts. With all my love, ${state.name}`,
       options: [
         {
           text:
@@ -219,8 +217,7 @@ const textNodes = function() {
     // ______________________________MALE NAVY JOB SELECTION_________________________________________________
     {
       id: 5,
-      text:
-        "My love I long for you daily. Because of the pace of the war I have already been assigned a ship and hope that this letter will reach you soon rather than later. Usually one does basic on the main land but the Navy has been forced to adapt and we will have more then enough time to become the sailors we must be before we reach the northern front and meet the Ragnosians in their own waters. When I first arrived on the f.o.l.s. Grace (the ship I have been assigned) a young and somewhat brash sailor approached me and struck up a chat. I decided that__________. That is enough about me though, please write often and frequently. All this time on the sea fills one with unimaginable lonelyness and boredum",
+      text: `My love I long for you daily. Because of the pace of the war I have already been assigned a ship and hope that this letter will reach you soon rather than later. Usually one does basic on the main land but the Navy has been forced to adapt and we will have more then enough time to become the sailors we must be before we reach the northern front and meet the Ragnosians in their own waters. When I first arrived on the f.o.l.s. Grace (the ship I have been assigned) a young and somewhat brash sailor approached me and struck up a chat. I decided that__________. That is enough about me though, please write often and frequently. All this time on the sea fills one with unimaginable lonelyness and boredum. With more longing than can be expressed with words, ${state.name}`,
       options: [
         {
           text: "I didn`t like his additude and told him to get lost.",
@@ -247,8 +244,7 @@ const textNodes = function() {
     // ____________________________MALE JOB SELECT AIRFORCE___________________________________________________
     {
       id: 6,
-      text:
-        "My dearest I hope this letter arrives as swiftly as possible. Having reached the western front and joined the Air Force, I have gotten a taste of the capacities of our modern technology. Jacqueline, you would not believe the speed of our war planes! To think, I might one day be in the cock pit of one of these amazing machines. Worry not my love, the only people that should be stricken with fear are the Ragnosian Sky Brigade fighters. We have a technical test coming up that will determine our roles so I decided to write to calm my nerves as you know when it comes to these kinds of tests I ____________. Wish me luck my love. I wait eagerly for your next letter",
+      text: `My dearest I hope this letter arrives as swiftly as possible. Having reached the western front and joined the Air Force, I have gotten a taste of the capacities of our modern technology. Jacqueline, you would not believe the speed of our war planes! To think, I might one day be in the cock pit of one of these amazing machines. Worry not my love, the only people that should be stricken with fear are the Ragnosian Sky Brigade fighters. We have a technical test coming up that will determine our roles so I decided to write to calm my nerves as you know when it comes to these kinds of tests I ____________. Wish me luck my love. I wait eagerly for your next letter, ${state.name}`,
       options: [
         {
           text: "...do Ok but usually charm my way past the teachers.",
@@ -276,8 +272,7 @@ const textNodes = function() {
     // ____________________________FEMALE JOB SELECT ARMY_______________________________________________________
     {
       id: 7,
-      text:
-        "My Anthony, I dream of you nightly. Of late however these sweet dreams are met with nightmares of what is to come on the western front. While our Army might be more accepting of a Lady in wartimes than most they still rarely accept women on the front lines. This change is inevitable as more and more men die by the thousands. Part of me is angry that I am underestemated but the other part can not help but be glad that it is unlikely that I will be reunited with you next in a body bag. Before boot camp, I was approached by a young and charming soldier with whom I ____________ . I know that you will understand after all this is war time and things happen.",
+      text: `My Anthony, I dream of you nightly. Of late however these sweet dreams are met with nightmares of what is to come on the western front. While our Army might be more accepting of a Lady in wartimes than most they still rarely accept women on the front lines. This change is inevitable as more and more men die by the thousands. Part of me is angry that I am underestemated but the other part can not help but be glad that it is unlikely that I will be reunited with you next in a body bag. Before boot camp, I was approached by a young and charming soldier with whom I ____________ . I know that you will understand after all this is war time and things happen. Yours truely, ${state.name}`,
       options: [
         {
           text:
@@ -305,8 +300,7 @@ const textNodes = function() {
     // ____________________________________FEMALE JOB SELECT NAVY_____________________________________________
     {
       id: 8,
-      text:
-        "Dearest Anthony, I am now writing you from port with news of the most recent developments. I have yet to be given my deployment orders but know that the fleet is soon to depart and with it will come an absense of your your sweet words that have been the only thing invigerating me with the life sustaining breath that I require to continue on. I do not know what, I will do without them in the coming months as we venture forward to the Naverian front to the North. One thing that has brought me hope was meeting a fellow Sailor named Janet with whom I have become fast friends. She has invited me to meet her friends and a few other members destine to sail with the 28th fleet. I am contemplating _______________ after I finish writing this letter. Hopefully friendship and comradery will be enough to partially fill the void that is the absense of your touch.",
+      text: `Dearest Anthony, I am now writing you from port with news of the most recent developments. I have yet to be given my deployment orders but know that the fleet is soon to depart and with it will come an absense of your your sweet words that have been the only thing invigerating me with the life sustaining breath that I require to continue on. I do not know what, I will do without them in the coming months as we venture forward to the Naverian front to the North. One thing that has brought me hope was meeting a fellow Sailor named Janet with whom I have become fast friends. She has invited me to meet her friends and a few other members destine to sail with the 28th fleet. I am contemplating _______________ after I finish writing this letter. Hopefully friendship and comradery will be enough to partially fill the void that is the absense of your touch. With passion, longing and desire, ${state.name}`,
       options: [
         {
           text:
@@ -320,9 +314,6 @@ const textNodes = function() {
           requiredState: currentState => currentState.isF,
           setState: { isF: true, isNa: true },
           nextText: 120
-          // ___________________________________________________________________________
-          // ___________________________________________________________________________
-          //____________________________________________________________________________
         },
         {
           text:
@@ -336,8 +327,7 @@ const textNodes = function() {
     // ____________________________FEMALE JOB SELECT AIRFORCE_________________________________________________
     {
       id: 9,
-      text:
-        "Dear Anthony, The sky is the limit! While I am torn from being by your side. I can not bite back the enthusiasm and excitment that comes with the prospect of taking to the skies! You would love the view from heavens, it is absolutely breath taking! While we were on our way to roll call to be seperated into our given divisions, I decided to _____________ before we begin the exams that will assign us the roles that will determine our futures. I hope that I am placed with the within the WAF unit of the Airforce. Women have finally been granted the oppertunity to take to the skies in combat against the Ragnosian Dog fighters and we have our very own unit at that! I look forward to your next letter and will be waiting for it anxiously, do you have word on home my father's health is progressing?",
+      text: `Dear Anthony, The sky is the limit! While I am torn from being by your side. I can not bite back the enthusiasm and excitment that comes with the prospect of taking to the skies! You would love the view from heavens, it is absolutely breath taking! While we were on our way to roll call to be seperated into our given divisions, I decided to _____________ before we begin the exams that will assign us the roles that will determine our futures. I hope that I am placed with the within the WAF unit of the Airforce. Women have finally been granted the oppertunity to take to the skies in combat against the Ragnosian Dog fighters and we have our very own unit at that! I look forward to your next letter and will be waiting for it anxiously, do you have word on how my father's health is progressing? ${state.name}`,
       options: [
         {
           text:
@@ -432,7 +422,7 @@ const textNodes = function() {
     {
       id: 105,
       text:
-        "Dearest, Every letter you write brings new life to this Infantryman. It turns out that man I offered that ciggerette to was my Sergeant are Arms. After our chat and him hearing of the distain I feel for those Ragnosian vermin, I have been granted the oppertunity to slay them in person on the front lines! When I return home it will be as a hero or in a body bag! I will make you proud and do all in my power to end this war as fast as possible! I have been given the honor of leading a unit of five men and we have been given intel on possible enemy location. I plan to do what I must to impress my Sergeant and so I have decided to ____________",
+        `Dearest, Every letter you write brings new life to this Infantryman. It turns out that man I offered that ciggerette to was my Sergeant are Arms. After our chat and him hearing of the distain I feel for those Ragnosian vermin, I have been granted the oppertunity to slay them in person on the front lines! When I return home it will be as a hero or in a body bag! I will make you proud and do all in my power to end this war as fast as possible! I have been given the honor of leading a unit of five men and we have been given intel on possible enemy location. I plan to do what I must to impress my Sergeant and so I have decided to ____________. As always, I am looking forward to your next letter. love, ${state.name}`,
       options: [
         {
           text:
@@ -461,7 +451,7 @@ const textNodes = function() {
     {
       id: 106,
       text:
-        "Lovely Jacqueline, as always the thought of you brings new life back into this poor soul. Thankfully after asking the name of that strange man I learned that he was in fact my superior in civies. After we decided to share my last cigerrette he took favor on me and he decided to have me trained as Feild Medic and as such, while I do find myself on the front lines, I am really in the scope of anyone's rifle. I wish this letter was all good news though my sweat, however I will be suprised if this letter even reaches you. Our encampment has been surrounded and the Infantryman that have been sent to clear our escape have also been routed and I fear severly injured by the color of the flares they have just fired. I know that some might doubt this decision but with the enemy encroaching, I have decided to _________________ .",
+        `Lovely Jacqueline, as always the thought of you brings new life back into this poor soul. Thankfully after asking the name of that strange man I learned that he was in fact my superior in civies. After we decided to share my last cigerrette he took favor on me and he decided to have me trained as Feild Medic and as such, while I do find myself on the front lines, I am really in the scope of anyone's rifle. I wish this letter was all good news though my sweat, however I will be suprised if this letter even reaches you. Our encampment has been surrounded and the Infantryman that have been sent to clear our escape have also been routed and I fear severly injured by the color of the flares they have just fired. I know that some might doubt this decision but with the enemy encroaching, I have decided to _________________ . Forever yours, ${state.name}`,
       options: [
         {
           text: "...run to the Front lines and aid the injured.",
@@ -488,7 +478,7 @@ const textNodes = function() {
     {
       id: 107,
       text:
-        "I am sorry that it has been a long while sense writing my dearest. I have not moved on and I hope that I continue to maintain your affection. My training has engulfed me day and night for weeks. While technically my grades on the assesment test were not at the level needed to be a Dog Fighter, my superior liked my ambition,confidence, and persistense. I must thank you for reminding me that those were my best qualties. Sometimes I feel you know me better than I know myself. My boys and I are one hell of a team and have already grabbed a few boggies from the skies. We have just received order for our most dangerous mission yet against the new Ragnosian fighters. I have seen the specs we have on them and think they are a bit over rated and as such I have decided that when we fly next I will_____________________",
+        `I am sorry that it has been a long while sense writing my dearest. I have not moved on and I hope that I continue to maintain your affection. My training has engulfed me day and night for weeks. While technically my grades on the assesment test were not at the level needed to be a Dog Fighter, my superior liked my ambition,confidence, and persistense. I must thank you for reminding me that those were my best qualties. Sometimes I feel you know me better than I know myself. My boys and I are one hell of a team and have already grabbed a few boggies from the skies. We have just received order for our most dangerous mission yet against the new Ragnosian fighters. I have seen the specs we have on them and think they are a bit over rated and as such I have decided that when we fly next I will_____________________. Your knight in the skies, ${state.name}` ,
       options: [
         {
           text:
@@ -561,7 +551,7 @@ const textNodes = function() {
     {
       id: 110,
       text:
-        "My beloved Jacqueline, Good News! While my last mission was by far the scariest situation I have ever found myself in, I am writing means I am not only alive but have come home with two kills under my belt and a promotion and title that comes with such an accomplishment. I have included in this letter some money that I hope will help you afford the medication needed for your father's ailment and maybe have a bit left over for something special for yourself. You have done so much for me over the course of this war and my new title has it's perks and as such you can count on a similar ammount with every letter I write from here on. Not all the news is good, however. I lost two good men in the last mission and my 2nd in command Jack just barely made it out himself and will require another plane as his was damaged beyond repair upon the landing when we returned. He took a round himself and is in the infermary. He has promised, none the less, that the damage is minimal and he can return to the skies in time for our next mission. That is the last bit of mixed news, this mission looks to be the most difficult yet but it could change the course of the war itself! We are going at the heart of the Empire of Ragnosal. If we are succefull and I write you next I plan ______________ .",
+        `My beloved Jacqueline, Good News! While my last mission was by far the scariest situation I have ever found myself in, I am writing means I am not only alive but have come home with two kills under my belt and a promotion and title that comes with such an accomplishment. I have included in this letter some money that I hope will help you afford the medication needed for your father's ailment and maybe have a bit left over for something special for yourself. You have done so much for me over the course of this war and my new title has it's perks and as such you can count on a similar ammount with every letter I write from here on. Not all the news is good, however. I lost two good men in the last mission and my 2nd in command Jack just barely made it out himself and will require another plane as his was damaged beyond repair upon the landing when we returned. He took a round himself and is in the infermary. He has promised, none the less, that the damage is minimal and he can return to the skies in time for our next mission. That is the last bit of mixed news, this mission looks to be the most difficult yet but it could change the course of the war itself! We are going at the heart of the Empire of Ragnosal. If we are succefull and I write you next I plan ______________ . Yours, ${state.name}`,
       options: [
         {
           text:
@@ -572,7 +562,7 @@ const textNodes = function() {
             isDg: true,
             isAf: true,
             survived: true,
-            isMarried: true,
+            isHappy: true,
             isWarHero: true
           },
           nextText: 111
@@ -590,9 +580,21 @@ const textNodes = function() {
     // ________________________VICTORY SLIDE GET HELP WITH AIRFORCE________________________________________
     {
       id: 111,
-      text: `Victory Slide Get Help Here. Look here, ${df(state).gender}${
+      text: `This is a personal letter from the Office of the Chief Minister of the Federation of Sovreign Lands. congratulation Sergeant Major ${
+        state.name
+      }. Your service as a ${
+        df(state).job
+      } was essential to insuring that the Federation of Sovreign Lands and the Allaince of Free Nations were victorious over the attempts of the Empire of Ragnosal at global conquest. ${
+        df(state).gender
+      }${
         df(state).name
-      } has a job doing ${df(state).job}`,
+      }, after a heroing experience during his brutal struggle during the nightmare that was most certainly his war, currently ${
+        df(state).mood
+      }. Once again I must say congratulation ${df(state).gender}${
+        df(state).name
+      } your struggle is over. Today the ${
+        df(state).class
+      } is losing one of it´s finiest assests but for all the right reasons. Enjoy the fruits of your labors and if there is any way at all I can assist you in this, please do not hesitate to ask!`,
       options: [
         {
           text: "Army",
@@ -643,7 +645,7 @@ const textNodes = function() {
     {
       id: 113,
       text:
-        "Jacqueline my love, the mission was a success. I have just now learned that our last bombing target was of vital importance and I may have played a small role in bringing this war to an end! Not only that but I got to play a part directly by bringing down one of the menace fighter jets the bastards sent screaming our way. I now have a new nick name amoungst the crew at base. That call me Top Shot these days. Everyone onboard our bomber has recieved a promotion and optional leave. While it pains my heart, most men are not accepting it and I plan _________ . To think though that this horrid war may soon draw to a close. I think about you constantly and hope that the bonus money I have sent with this letter will help your father get the meds he needs.",
+        `Jacqueline my love, the mission was a success. I have just now learned that our last bombing target was of vital importance and I may have played a small role in bringing this war to an end! Not only that but I got to play a part directly by bringing down one of the menace fighter jets the bastards sent screaming our way. I now have a new nick name amoungst the crew at base. That call me Top Shot these days. Everyone onboard our bomber has recieved a promotion and optional leave. While it pains my heart, most men are not accepting it and I plan _________ . To think though that this horrid war may soon draw to a close. I think about you constantly and hope that the bonus money I have sent with this letter will help your father get the meds he needs. Yours through thick and thin, ${state.name}`,
       options: [
         {
           text:
@@ -675,7 +677,7 @@ const textNodes = function() {
     {
       id: 104,
       text:
-        "My sweetest Jacqueline. The timing of this horrid War could not have been set at a more remoursful time. While it is with excitment, honor, and pride that I have answered the call to arms like my brothers before me; there is no greater sorrow then being away from you at the very onset of the miracle that is our courtship. Like my eldest brother James I have choosen to serve in the best _________ this world has ever seen, so fear not my sweet those Ragnosian bastards won't know what hit them!",
+        `My sweetest Jacqueline. The timing of this horrid War could not have been set at a more remoursful time. While it is with excitment, honor, and pride that I have answered the call to arms like my brothers before me; there is no greater sorrow then being away from you at the very onset of the miracle that is our courtship. Like my eldest brother James I have choosen to serve in the best _________ this world has ever seen, so fear not my sweet those Ragnosian bastards won't know what hit them! Your warrior in the making, ${state.name}`,
       options: [
         {
           text: "Army",
@@ -753,7 +755,7 @@ const textNodes = function() {
     {
       id: 80085,
       text:
-        "Dearest, I know that my actions today will cause you and our family great pain but it is pain itself that has driven me to this. I do not regret coming home and being with you but I am filled with a regret unbeknowst to anyone on the face of this planet because I was not there when my crew died in that final battle. The victory they acheived is what has granted us the oppertunties and success we had in our life sense the war came to an end. I thought that a life with you and our childeren would allow me to over come the grief of what feels like my betrayal. I have already made my arrangements and you will be well taken care of. Our childeren have grown old and are idependent in their own right. Please know that you were the only reason I was able to make it this long and I can not subject you to anymore of the depression that comes when I inevitably empty the bottle on hard nights. Please carry on and do what you can to forget me. I don't deserve you or the life we have. I beg you find someone more deserving of your love. With the very last onces of love I have for this world, yours ???????  YOU HAVE COME HOME VICTORIOUS BUT HAVE LOST YOUR PERSONAL WAR ---- GAME OVER!",
+        `Dearest, I know that my actions today will cause you and our family great pain but it is pain itself that has driven me to this. I do not regret coming home and being with you but I am filled with a regret unbeknowst to anyone on the face of this planet because I was not there when my crew died in that final battle. The victory they acheived is what has granted us the oppertunties and success we had in our life sense the war came to an end. I thought that a life with you and our childeren would allow me to over come the grief of what feels like my betrayal. I have already made my arrangements and you will be well taken care of. Our childeren have grown old and are idependent in their own right. Please know that you were the only reason I was able to make it this long and I can not subject you to anymore of the depression that comes when I inevitably empty the bottle on hard nights. Please carry on and do what you can to forget me. I don't deserve you or the life we have. I beg you find someone more deserving of your love. With the very last onces of love I have for this world, yours ${state.name}  YOU HAVE COME HOME VICTORIOUS BUT HAVE LOST YOUR PERSONAL WAR ---- GAME OVER!`,
       options: [
         {
           text: "Restart",
@@ -856,7 +858,7 @@ const textNodes = function() {
     {
       id: 122,
       text:
-        "Dearest Anthony, Getting to know my fellow crewman has proven to be one of the best decisions of my life. After doing wonderfully on my exams, I have choosen to a career in Navel Law enforcement. I have a few cases under my belt at this point and have been assaigne",
+        "Dearest Anthony, Getting to know my fellow crewman has proven to be one of the best decisions of my life. After doing wonderfully on my exams, I have choosen a career in Navel Law enforcement. I have a few cases under my belt at this point and have been assaigne",
       options: [
         {
           text: "STUFF GOES HERE",
@@ -878,29 +880,45 @@ const textNodes = function() {
         }
       ]
     },
+    // _________________________________________________
+    // _________________________________________________
+    // _________________________________________________
+    // _________________________________________________
     {
       id: 325,
-      text: "WINNING!!!",
-      options: [
-        {
-          text: "STUFF GOES HERE",
-          requiredState: currentState => currentState.isNLE && currentState.isF,
-          setState: { isM: true, isAf: true, isTg: true },
-          nextText: 24982759298
-        },
-        {
-          text: "STUFF GOES HERE",
-          requiredState: currentState => currentState.isNLE && currentState.isF,
-          setState: { isM: true, isAf: true, isTg: true },
-          nextText: 51093810985
-        },
-        {
-          text: "STUFF GOES HERE",
-          requiredState: currentState => currentState.isNLE,
-          setState: { isM: true, isAf: true, isTg: true },
-          nextText: 894723058927
-        }
-      ]
+      text: `This is a personal letter from the Office of the Chief Minister of the Federation of Sovreign Lands. Congradulation First Sergeant ${
+        state.name
+      }. Your service as a ${
+        df(state).job
+      } was essential to insuring that the Federation of Sovreign Lands and the Allaince of Free Nations were victorious over the attempts of the Empire of Ragnosal at global conquest. ${
+        df(state).gender
+      }${
+        df(state).name
+      }, after a heroing experience her brutal struggle during the nightmare that was most certainly her war, currently ${
+        df(state).mood
+      } Congradulation ${df(state).gender}${
+        df(state).name
+      } your struggle is over. Enjoy the fruits of your labors and if there is any way at all I can assist you in this, please do not hesitate to ask!`
+      // options: [
+      //   {
+      //     text: "STUFF GOES HERE",
+      //     requiredState: currentState => currentState.isNLE && currentState.isF,
+      //     setState: { isM: true, isAf: true, isTg: true },
+      //     nextText: 24982759298
+      //   },
+      //   {
+      //     text: "STUFF GOES HERE",
+      //     requiredState: currentState => currentState.isNLE && currentState.isF,
+      //     setState: { isM: true, isAf: true, isTg: true },
+      //     nextText: 51093810985
+      //   },
+      //   {
+      //     text: "STUFF GOES HERE",
+      //     requiredState: currentState => currentState.isNLE,
+      //     setState: { isM: true, isAf: true, isTg: true },
+      //     nextText: 894723058927
+      //   }
+      // ]
     },
     {
       id: 1133,

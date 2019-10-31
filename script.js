@@ -57,8 +57,8 @@ function beforeEverything() {
   textElement.setAttribute("style", "visibility: hidden");
   optionButtonsElement.innerHTML = `<div class="IntroScreen">
   <h1>Love and Loss</h1>
-  <h2>War Time Addition &copy;</h2>
-  <h5>Author: Stephen Coley</h5>
+  <h2>War Time edition &copy;</h2>
+  <h5>Designed by: Stephen Coley</h5>
   <form onSubmit="hello(event)">
   <label>"Hello Citizen" says a uniformed man with a message in his hand. "We require your full name here, to insure that there is proper documentation denoting that you have recieved this summons"</label>
   <input type="text" id="something" value="" >
